@@ -84,6 +84,6 @@ deploy."
           :artifact-map files
           :transfer-listener :stdout
           :repository [repo])
-         (catch org.sonatype.aether.deployment.DeploymentException e
+         (catch Exception e
            (when main/*debug* (.printStackTrace e))
            (main/abort (abort-message (.getMessage e))))))))
